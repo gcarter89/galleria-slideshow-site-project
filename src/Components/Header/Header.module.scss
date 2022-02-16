@@ -1,0 +1,61 @@
+$button-text-small: 9px;
+$button-text-large: 12px;
+$button-font-color: #E5E5E5;
+
+$logo-small: 32px;
+$logo-large: 48px;
+
+$header-padding-small: 24px;
+
+$header-padding-top-bottom-medium: 28px;
+$header-padding-left-right-medium: 40px;
+
+$header-padding-large: 40px;
+
+$header-border-colour: #7D7D7D;
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: $header-padding-large;
+    border-bottom: 1px solid $button-font-color;
+
+    &__logo {
+        height: $logo-large;
+    }
+
+    &__button {
+        font-size: $button-text-large;
+        letter-spacing: 2.57px;
+        text-transform: uppercase;
+        color: $header-border-colour;
+        cursor: pointer;
+        transition: color 0.15s ease-in;
+    }
+
+    &__button:hover {
+        color:#000000;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: $header-padding-top-bottom-medium $header-padding-left-right-medium;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .header {
+        padding: $header-padding-small;
+
+        &__logo {
+            height: $logo-small;
+        }
+
+        &__button {
+            font-size: $button-text-small
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.card {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.841672) 100%);
+
+
+
+    &__img {
+        display: block;
+        position: relative;
+        z-index: -1;
+    }
+
+    &__copy {
+        position: absolute;
+        bottom: 4px;
+        padding: 32px;
+        h1 {
+            margin-bottom: 8px;
+        }
+        h2 {
+            opacity: 0.75;
+        }
+    }
+}

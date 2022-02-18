@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './Header.module.scss';
-import Logo from '../../Assets/shared/logo.svg';
+import Logo from '../../assets/shared/logo.svg';
 
 export function Header() {
     const [isStart, setStart] = useState(false);

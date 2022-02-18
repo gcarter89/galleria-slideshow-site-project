@@ -41,12 +41,6 @@
             grid-gap: 40px;
             justify-content: center;
         }
-
-        &__masonryRow {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
     }
 }
 
@@ -57,12 +51,6 @@
             grid-template-columns: auto auto auto;
             grid-gap: 40px;
             justify-content: center;
-        }
-
-        &__masonryRow {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
         }
     }
 }

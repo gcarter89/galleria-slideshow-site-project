@@ -11,9 +11,7 @@ export function Main() {
     console.log(data);
 
     const mobileMatch = useMediaQuery('(max-width: 768px)');
-
     const tabletMatch = useMediaQuery('(max-width: 1024px)');
-
     const laptopMatch = useMediaQuery('(max-width: 1439px)');
 
 

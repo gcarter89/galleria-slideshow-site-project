@@ -1,9 +1,9 @@
-.main {
+.masonry {
     min-height: 100vh;
     margin: 40px;
 }
 
-.main {
+.masonry {
     &__masonryDesktop {
         display: grid;
         grid-template-columns: auto auto auto auto;
@@ -19,7 +19,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .main {
+    .masonry {
         display: flex;
         justify-content: center;
         margin: 24px;
@@ -34,7 +34,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .main {
+    .masonry {
         &__masonryTablet {
             display: grid;
             grid-template-columns: auto auto;
@@ -45,7 +45,7 @@
 }
 
 @media screen and (max-width: 1439px) {
-    .main {
+    .masonry {
         &__masonryLaptop {
             display: grid;
             grid-template-columns: auto auto auto;

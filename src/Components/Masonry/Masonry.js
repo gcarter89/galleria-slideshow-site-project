@@ -1,4 +1,4 @@
-import styles from './Main.module.scss';
+import styles from './Masonry.module.scss';
 import { useMediaQuery } from '@mui/material';
 import { MasonryMobile } from './_subcomponents/MasonryMobile';
 import { MasonryTablet } from './_subcomponents/MasonryTablet';
@@ -7,7 +7,7 @@ import { MasonryDesktop } from './_subcomponents/MasonryDesktop';
 const data = require('../../assets/data');
 
 
-export function Main() {
+export function Masonry() {
     console.log(data);
 
     const mobileMatch = useMediaQuery('(max-width: 768px)');
@@ -16,7 +16,7 @@ export function Main() {
 
 
     return (
-        <main className={styles.main}>
+        <main className={styles.masonry}>
             {
                 mobileMatch ? 
                     <MasonryMobile data={data} />

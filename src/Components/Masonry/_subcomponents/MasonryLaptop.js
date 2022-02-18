@@ -1,5 +1,5 @@
 import { Card } from '../../Card/Card';
-import styles from '../Main.module.scss';
+import styles from '../Masonry.module.scss';
 
 
 export function MasonryLaptop({ data }) {
@@ -78,15 +78,15 @@ export function MasonryLaptop({ data }) {
     
     
     return (
-        <div className={styles.main__masonryLaptop}>
-            <div className={styles.main__masonryRow}>
+        <div className={styles.masonry__masonryLaptop}>
+            <div className={styles.masonry__masonryRow}>
                 {laptopRowArray1.map((artwork, index) => {
                     return (
                         <Card key={index} data={artwork} />
                     )
                 })}
             </div>
-            <div className={styles.main__masonryRow}>
+            <div className={styles.masonry__masonryRow}>
                 {laptopRowArray2.map((artwork, index) => {
                     return (
                         <Card key={index} data={artwork} />
@@ -94,7 +94,7 @@ export function MasonryLaptop({ data }) {
                 })}
                 
             </div>
-            <div className={styles.main__masonryRow}>
+            <div className={styles.masonry__masonryRow}>
                 {laptopRowArray3.map((artwork, index) => {
                     return (
                         <Card key={index} data={artwork} />

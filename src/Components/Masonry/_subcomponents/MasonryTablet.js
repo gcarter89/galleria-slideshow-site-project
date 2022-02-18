@@ -1,4 +1,4 @@
-import styles from '../Main.module.scss';
+import styles from '../Masonry.module.scss';
 import { Card } from '../../Card/Card';
 
 export function MasonryTablet({ data }) {
@@ -74,15 +74,15 @@ export function MasonryTablet({ data }) {
     })
 
     return (
-        <div className={styles.main__masonryTablet}>
-            <div className={styles.main__masonryRow}>
+        <div className={styles.masonry__masonryTablet}>
+            <div className={styles.masonry__masonryRow}>
                 {tabletRowArray1.map((artwork, index) => {
                     return (
                         <Card key={index} data={artwork} />
                     )
                 })}
             </div>
-            <div className={styles.main__masonryRow}>
+            <div className={styles.masonry__masonryRow}>
                 {tabletRowArray2.map((artwork, index) => {
                     return (
                         <Card key={index} data={artwork} />

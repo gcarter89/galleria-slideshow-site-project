@@ -3,7 +3,8 @@
     height: fit-content;
     width: fit-content;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.841672) 100%);
-
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 
     &__img {
@@ -32,5 +33,15 @@
                 width: 310px;
             }
         }
+    }
+}
+
+.card:hover {
+    background: rgba(255,255,255,0.55);
+    h1 {
+        color: rgb(74 74 74 / 70%)
+    }
+    h2 {
+        color: rgb(28 28 28 / 80%);
     }
 }

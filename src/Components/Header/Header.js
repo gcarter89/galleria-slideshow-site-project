@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import styles from './Header.module.scss';
 import Logo from '../../assets/shared/logo.svg';
 
-export function Header() {
-    const [isStart, setStart] = useState(false);
+export function Header({isStart, setStart}) {
+    
 
-    function handleHeaderButtonClick(event) {
+    function handleClick(event) {
         event.preventDefault();
         setStart(!isStart);
     }
@@ -13,7 +12,7 @@ export function Header() {
     return (
         <header className={styles.header}>
             <img className={styles.header__logo} src={Logo} alt='Galleria logo' />
-            <button className={styles.header__button} onClick={(e) => handleHeaderButtonClick(e)}>{isStart ? 'Stop Slideshow' : 'Start Slideshow'}</button>
+            <button className={styles.header__button} onClick={(e) => handleClick(e)}>{isStart ? 'Stop Slideshow' : 'Start Slideshow'}</button>
         </header>
     )
 }

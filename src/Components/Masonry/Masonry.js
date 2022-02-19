@@ -4,11 +4,9 @@ import { MasonryMobile } from './_subcomponents/MasonryMobile';
 import { MasonryTablet } from './_subcomponents/MasonryTablet';
 import { MasonryLaptop } from './_subcomponents/MasonryLaptop';
 import { MasonryDesktop } from './_subcomponents/MasonryDesktop';
-const data = require('../../assets/data');
 
 
-export function Masonry() {
-    console.log(data);
+export function Masonry({data}) {
 
     const mobileMatch = useMediaQuery('(max-width: 768px)');
     const tabletMatch = useMediaQuery('(max-width: 1024px)');

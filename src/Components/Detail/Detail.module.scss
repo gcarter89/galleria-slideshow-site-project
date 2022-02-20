@@ -2,13 +2,13 @@
     margin-top: 40px;
     margin-left: 40px;
     margin-right: 40px;
-    &__hero {
-        h1 {
-            color: black;
-        }
-        h2 {
-            color: #7D7D7D;
-        }
+
+    &__artworkName {
+        color: black;
+    }
+
+    &__artistName {
+        color: #7D7D7D;
     }
 }
 
@@ -25,7 +25,7 @@
         margin-right: 24px;
         margin-bottom: 68px;
 
-        p {
+        &__artworkText {
             margin-top: -38px;
             width: 327px;
             color: #7D7D7D;
@@ -33,14 +33,16 @@
         &__hero {
             position: relative;
             width: 327px;
-            margin-bottom: 80px;
-            h1 {
+            margin-bottom: 80px;   
+        }
+
+        &__artistName {
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        &__artworkName {
                 padding-bottom: 8px;
-            }
-            h2 {
-                font-size: 15px;
-                font-weight: 400;
-            }
         }
 
         &__artworkYear {
@@ -79,10 +81,25 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 374px) {
     .detail {
         &__hero {
             width: 272px;
+        }
+
+        &__heroText {
+            width: 188px;
+        }
+
+        &__artworkText {
+            width: 272px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__artworkYear {
+            width: 272px;
+            font-size: 80px;
         }
     }
 }

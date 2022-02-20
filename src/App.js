@@ -9,7 +9,7 @@ import './App.scss';
 function App() {
     console.log(data);
     const [isStart, setStart] = useState(true);
-    const [selectedArtwork, setSelectedArtwork] = useState(data[0]);
+    const [selectedArtwork, setSelectedArtwork] = useState(data[2]);
 
     return (
         <>

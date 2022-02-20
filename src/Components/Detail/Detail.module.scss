@@ -2,13 +2,96 @@
     margin-top: 40px;
     margin-left: 40px;
     margin-right: 40px;
+    
 
     &__artworkName {
         color: black;
     }
 
     &__artistName {
+        font-size: 15px;
+        font-weight: 400;
         color: #7D7D7D;
+    }
+
+    &__artworkText {
+        color: #7D7D7D;
+    }
+
+    &__artworkYear {
+        color: #F3F3F3;
+    }
+
+    &__source {
+        display: block;
+    }
+
+
+}
+
+@media screen and (max-width: 1040px) {
+    .detail {
+        position: relative;
+        width: 688px;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        
+
+        &__hero {
+            width: 475px;
+        }
+
+
+        &__img {
+            width: 475px;
+        }
+
+        &__heroText {
+            position: absolute;
+            top: 0;
+            background-color: white;
+            left: 248px;
+            padding-left: 65px;
+            padding-bottom: 48px;
+        }
+
+        &__artworkName {
+            font-size: 56px;
+            padding-bottom: 24px;
+        }
+
+        &__artistImage {
+            position: absolute;
+            left: 256px;
+            top: 160px;
+        }
+
+        &__copy {
+            margin-top: 32px;
+        }
+
+        &__artworkText {
+            width: 475px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -126px;
+
+        }
+
+        &__artworkYear {
+            width: 475px;
+            font-size: 200px;
+            text-align: end;
+        }
+
+        &__source {
+            width: 475px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 40px;
+        }
     }
 }
 
@@ -16,6 +99,7 @@
 
 @media screen and (max-width: 767px) {
     .detail {
+        width: unset;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -28,7 +112,6 @@
         &__artworkText {
             margin-top: -38px;
             width: 327px;
-            color: #7D7D7D;
         }
         &__hero {
             position: relative;
@@ -36,17 +119,16 @@
             margin-bottom: 80px;   
         }
 
-        &__artistName {
-            font-size: 15px;
-            font-weight: 400;
+        &__copy {
+            margin-top: unset;
         }
 
         &__artworkName {
-                padding-bottom: 8px;
+            font-size: initial;
+            padding-bottom: 8px;
         }
 
         &__artworkYear {
-            font-size: 100px;
             font-size: 100px;
             width: 327px;
             text-align: end;
@@ -64,17 +146,24 @@
             bottom: -56px;
             padding: 24px 24px 24px 18px;
             background-color: white;
+            top: unset;
+            left: unset;
         }
 
         &__artistImage {
             height: 64px;
             width: 64px;
             padding-top: 24px;
+            position: unset;
+            left: unset;
+            top: unset;
         }
 
         &__source {
-            display: block;
             padding-top: 68px;
+            width: unset;
+            margin-left: unset;
+            margin-right: unset;
         }
 
 

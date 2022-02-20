@@ -28,10 +28,6 @@ export function Detail({selectedArtwork}) {
                 <p className={styles.detail__artworkText}>{selectedArtwork.description}</p>
                 <a className={styles.detail__source} href={selectedArtwork.source} rel='noreferrer' target='_blank'>GO TO SOURCE</a>
             </section>
-
-            
-
-
         </main>
         
 

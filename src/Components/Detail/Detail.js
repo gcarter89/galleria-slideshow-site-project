@@ -18,8 +18,11 @@ export function Detail({selectedArtwork}) {
                     <img className={styles.detail__img} src={heroImageSmall} alt='Hero for artwork' />
                 </picture>
                 <div className={styles.detail__heroText}>
-                    <h1 className={styles.detail__artworkName}>{selectedArtwork.name}</h1>
-                    <h2 className={styles.detail__artistName}>{selectedArtwork.artist.name}</h2>
+                    <div className={styles.detail__nameGroup}>
+                        <h1 className={styles.detail__artworkName}>{selectedArtwork.name}</h1>
+                        <h2 className={styles.detail__artistName}>{selectedArtwork.artist.name}</h2>
+                    </div>
+                    
                     <img className={styles.detail__artistImage} src={artistImage} alt="artist" />
                 </div>
             </div>

@@ -1,35 +1,83 @@
 .detail {
+    width: 1380px;
+    display: grid;
+    grid-template-columns: auto auto;
+
     margin-top: 40px;
-    margin-left: 40px;
-    margin-right: 40px;
-    
+
+    margin-left: auto;
+    margin-right: auto;
+
+    &__hero {
+        display: flex;
+    }
+
+    &__img {
+        width: 475px;
+    }
+
+    &__heroText {
+        display: flex;
+        flex-direction: column;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        justify-content: flex-end;
+        position: relative;
+        width: 340px;
+    }
+
+    &__artistImage {
+        height: 128px;
+        width: 128px;
+        margin-bottom: -56px;
+    }
+
+    &__nameGroup {
+        position: absolute;
+        top: -1px;
+        background-color: white;
+        left: -65px;
+        padding-left: 65px;
+        padding-bottom: 67px;
+    }
 
     &__artworkName {
+        font-size: 56px;
+        padding-bottom: 24px;
         color: black;
     }
 
     &__artistName {
         font-size: 15px;
         font-weight: 400;
+        margin-bottom: auto;
         color: #7D7D7D;
     }
 
     &__artworkText {
         color: #7D7D7D;
+        width: 350px;
+        margin-top: -48px;
     }
 
     &__artworkYear {
+        font-size: 200px;
         color: #F3F3F3;
+        line-height: 172px;
     }
 
     &__source {
         display: block;
+        padding-top: 80px;
     }
-
-
 }
 
-@media screen and (max-width: 1040px) {
+
+
+
+
+@media screen and (max-width: 1399px) {
     .detail {
         position: relative;
         width: 688px;
@@ -38,34 +86,43 @@
         margin-left: auto;
         margin-right: auto;
         
-
         &__hero {
+            display: block;
             width: 475px;
         }
-
 
         &__img {
             width: 475px;
         }
 
         &__heroText {
+            display: block;
             position: absolute;
             top: 0;
             background-color: white;
             left: 248px;
             padding-left: 65px;
             padding-bottom: 48px;
+            width: unset;
         }
 
-        &__artworkName {
-            font-size: 56px;
-            padding-bottom: 24px;
+        &__nameGroup {
+            position: unset;
+            top: unset;
+            background-color: unset;
+            left: unset;
+            padding-left: unset;
+            padding-bottom: unset;
         }
+
 
         &__artistImage {
+            height: unset;
+            width: unset;
             position: absolute;
             left: 256px;
             top: 160px;
+            margin-bottom: unset;
         }
 
         &__copy {
@@ -80,10 +137,14 @@
 
         }
 
+        &__artworkName {
+            margin-bottom: unset;
+        }
+
         &__artworkYear {
             width: 475px;
-            font-size: 200px;
             text-align: end;
+            line-height: initial;
         }
 
         &__source {
@@ -165,8 +226,6 @@
             margin-left: unset;
             margin-right: unset;
         }
-
-
     }
 }
 

@@ -3,10 +3,25 @@
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #E5E5E5;
+    padding: 24px 40px;
+    margin-top: 108px;
+
+    &__artworkTitle {
+        font-size: 18px;
+        color: #000000;
+    }
+
+    &__artistName {
+        margin-top: 8px;
+        font-size: 13px;
+        color: #000000;
+        opacity: 0.75;
+    }
+
     &__buttonBack {
         cursor: pointer;
-        height: 16px;
-        width: 16px;
+        height: 24px;
+        width: 24px;
         img {
             height: 100%;
         }
@@ -14,38 +29,48 @@
 
     &__buttonForward {
         cursor: pointer;
-        height: 16px;
-        width: 16px;
+        margin-left: 40px;
+        height: 24px;
+        width: 24px;
         img {
             height: 100%;
         }
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1399px) {
+    .footer {
+        margin-top: 54px;
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
     .footer {
         margin-top: 104px;
         padding: 16px 24px;
 
-        &__artworkButtons {
+
+        &__buttonBack {
             height: 16px;
+            width: 16px;
         }
 
         &__buttonForward {
+            height: 16px;
+            width: 16px;
             margin-left: 24px;
         }
 
         &__artworkTitle {
             font-size: 14px;
-            color: #000000;
             font-weight: 700;
 
         }
         &__artistName {
             font-size: 10px;
             font-weight: 400;
-            color: #000000;
-            opacity: 0.75;
         }
     }
     

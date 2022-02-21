@@ -18,7 +18,8 @@ $header-border-colour: #7D7D7D;
 .header {
     display: flex;
     justify-content: space-between;
-    padding: $header-padding-large;
+    padding: $header-padding-large 0px;
+    margin: 0 $header-padding-large;
     border-bottom: 1px solid $button-font-color;
 
     &__logo {
@@ -43,6 +44,7 @@ $header-border-colour: #7D7D7D;
 @media screen and (max-width: 768px) {
     .header {
         padding: $header-padding-top-bottom-medium $header-padding-left-right-medium;
+        margin: unset;
     }
 }
 

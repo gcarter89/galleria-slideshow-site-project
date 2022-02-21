@@ -1,0 +1,52 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E5E5E5;
+    &__buttonBack {
+        cursor: pointer;
+        height: 16px;
+        width: 16px;
+        img {
+            height: 100%;
+        }
+    }
+
+    &__buttonForward {
+        cursor: pointer;
+        height: 16px;
+        width: 16px;
+        img {
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        margin-top: 104px;
+        padding: 16px 24px;
+
+        &__artworkButtons {
+            height: 16px;
+        }
+
+        &__buttonForward {
+            margin-left: 24px;
+        }
+
+        &__artworkTitle {
+            font-size: 14px;
+            color: #000000;
+            font-weight: 700;
+
+        }
+        &__artistName {
+            font-size: 10px;
+            font-weight: 400;
+            color: #000000;
+            opacity: 0.75;
+        }
+    }
+    
+}

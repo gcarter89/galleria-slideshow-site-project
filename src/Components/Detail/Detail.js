@@ -1,4 +1,5 @@
 import styles from './Detail.module.scss';
+import viewImageIcon from '../../assets/shared/icon-view-image.svg';
 
 export function Detail({selectedArtwork}) {
     console.log(selectedArtwork);
@@ -12,6 +13,10 @@ export function Detail({selectedArtwork}) {
     return (
         <main className={styles.detail}>
             <div className={styles.detail__hero}>
+                <button className={styles.detail__viewImage}>
+                    <img className={styles.detail__imageIcon} src={viewImageIcon} alt="view img" />
+                    VIEW IMAGE
+                </button>
                 <picture>
                     <source srcSet={heroImageLarge}
                         media="(min-width: 768px)" />

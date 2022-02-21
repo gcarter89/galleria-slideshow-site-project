@@ -2,13 +2,34 @@
     width: 1380px;
     display: grid;
     grid-template-columns: auto auto;
-
     margin-top: 40px;
-
     margin-left: auto;
     margin-right: auto;
 
+    &__viewImage {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        display: flex;
+        color: white;
+        padding: 16px;
+        background-color: rgba(0,0,0,0.55);
+        align-items: center;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.14px;
+    }
+
+    &__imageIcon {
+        padding-right: 14px;
+        height: 12px;
+        width: 12px;
+        padding-bottom: 2px;
+    }
+
     &__hero {
+        position: relative;
         display: flex;
     }
 
@@ -35,6 +56,7 @@
 
     &__nameGroup {
         position: absolute;
+        width: 320px;
         top: -1px;
         background-color: white;
         left: -65px;
@@ -108,6 +130,7 @@
 
         &__nameGroup {
             position: unset;
+            width: 400px;
             top: unset;
             background-color: unset;
             left: unset;
@@ -121,7 +144,7 @@
             width: unset;
             position: absolute;
             left: 256px;
-            top: 160px;
+            top: 100%;
             margin-bottom: unset;
         }
 
@@ -169,6 +192,16 @@
         margin-left: 24px;
         margin-right: 24px;
         margin-bottom: 68px;
+
+        &__viewImage {
+            bottom: unset;
+            top: 16px;
+            left: 16px;
+        }
+
+        &__nameGroup {
+            width: 175px;
+        }
 
         &__artworkText {
             margin-top: -38px;

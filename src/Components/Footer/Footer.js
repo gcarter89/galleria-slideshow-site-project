@@ -4,6 +4,8 @@ import buttonForwardImage from '../../assets/shared/icon-next-button.svg';
 
 
 export function Footer({selectedArtwork, setSelectedArtwork}) {
+
+
     return (
     <footer className={styles.footer}>
         <div className={styles.footer__artworkInfo}>

@@ -1,19 +1,45 @@
 import styles from './Detail.module.scss';
 import viewImageIcon from '../../assets/shared/icon-view-image.svg';
+import { useEffect, useRef } from 'react';
 
-export function Detail({selectedArtwork}) {
-    console.log(selectedArtwork);
+export function Detail({selectedArtwork, handleArtworkChange, viewImage, setViewImage}) {
 
     const heroImageSmall = require('../../' + selectedArtwork.images.hero.small);
     const heroImageLarge = require('../../' + selectedArtwork.images.hero.large);
     const artistImage = require('../../' + selectedArtwork.artist.image);
-    
+
+    let timer = useRef([handleArtworkChange, 5000]);
+
+
+    useEffect(() => {
+
+        if (viewImage) {
+            console.log('hello this is true')
+            clearTimeout(timer.current[0], timer.current[1])
+        } else {
+            console.log('goodbye this is false');
+            setTimeout(timer.current[0], timer.current[1])
+            
+        }
+    },[viewImage])
+
+
+
+
+
+    function handleViewImage(event) {
+        event.preventDefault();
+        setViewImage(true);
+    }
+
+
 
 
     return (
         <main className={styles.detail}>
+        {viewImage ? 1: null}
             <div className={styles.detail__hero}>
-                <button className={styles.detail__viewImage}>
+                <button onClick={(e) => handleViewImage(e)} className={styles.detail__viewImage}>
                     <img className={styles.detail__imageIcon} src={viewImageIcon} alt="view img" />
                     VIEW IMAGE
                 </button>

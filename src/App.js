@@ -17,10 +17,15 @@ function App() {
         setSelectedArtwork(data[searchIndex]);
     }
 
+    function handleHeaderClick(event) {
+        event.preventDefault();
+        setSelectedArtwork(data[0]);
+        setStart(!isStart);
+    }
 
     return (
         <>
-            <Header isStart={isStart} setStart={setStart}/>
+            <Header handleHeaderClick={handleHeaderClick} isStart={isStart}/>
             {isStart ? <Detail selectedArtwork={selectedArtwork} /> : <Masonry data={data} handleArtworkSelect={handleArtworkSelect}/>}
             {isStart ? <Footer selectedArtwork={selectedArtwork} setSelectedArtwork={setSelectedArtwork} /> : null}
         </>

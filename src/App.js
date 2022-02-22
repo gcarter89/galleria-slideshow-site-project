@@ -8,13 +8,23 @@ import './App.scss';
 
 function App() {
     console.log(data);
-    const [isStart, setStart] = useState(true);
+    const [isStart, setStart] = useState(false);
     const [selectedArtwork, setSelectedArtwork] = useState(data[4]);
+
+    function handleArtworkSelect(event, artwork) {
+        console.log('clicked!')
+        event.preventDefault();
+        setStart(true);
+        const searchIndex = data.map(object => object.name).indexOf(artwork.name);
+        setSelectedArtwork(data[searchIndex]);
+    }
+
+    // const indexFind = data.map(object => object.name).indexOf('Girl with a Pearl Earring')
 
     return (
         <>
             <Header isStart={isStart} setStart={setStart}/>
-            {isStart ? <Detail selectedArtwork={selectedArtwork} /> : <Masonry data={data}/>}
+            {isStart ? <Detail selectedArtwork={selectedArtwork} /> : <Masonry data={data} handleArtworkSelect={handleArtworkSelect}/>}
             {isStart ? <Footer selectedArtwork={selectedArtwork} setSelectedArtwork={setSelectedArtwork} /> : null}
         </>
     );

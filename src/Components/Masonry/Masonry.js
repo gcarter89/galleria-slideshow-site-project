@@ -6,7 +6,7 @@ import { MasonryLaptop } from './_subcomponents/MasonryLaptop';
 import { MasonryDesktop } from './_subcomponents/MasonryDesktop';
 
 
-export function Masonry({data}) {
+export function Masonry({data, handleArtworkSelect }) {
 
     const mobileMatch = useMediaQuery('(max-width: 768px)');
     const tabletMatch = useMediaQuery('(max-width: 1024px)');
@@ -17,14 +17,14 @@ export function Masonry({data}) {
         <main className={styles.masonry}>
             {
                 mobileMatch ? 
-                    <MasonryMobile data={data} />
+                    <MasonryMobile data={data} handleArtworkSelect={handleArtworkSelect} />
                 : 
                 tabletMatch ? 
-                    <MasonryTablet data={data} />
+                    <MasonryTablet data={data} handleArtworkSelect={handleArtworkSelect} />
                 :
                 laptopMatch ?
-                    <MasonryLaptop data={data} />
-                : <MasonryDesktop data={data} />
+                    <MasonryLaptop data={data} handleArtworkSelect={handleArtworkSelect} />
+                : <MasonryDesktop data={data} handleArtworkSelect={handleArtworkSelect} />
             }
         </main>
     )

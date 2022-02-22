@@ -1,7 +1,7 @@
 import styles from '../Masonry.module.scss';
 import { Card } from '../../Card/Card';
 
-export function MasonryDesktop({ data }) {
+export function MasonryDesktop({ data, handleArtworkSelect }) {
     let desktopRowArray1 = [];
     let desktopRowArray2 = []
     let desktopRowArray3 = []
@@ -80,28 +80,28 @@ export function MasonryDesktop({ data }) {
             <div className={styles.masonry__masonryRow}>
                 {desktopRowArray1.map((artwork, index) => {
                     return (
-                        <Card key={index} data={artwork} />
+                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
                     )
                 })}
             </div>
             <div className={styles.masonry__masonryRow}>
                 {desktopRowArray2.map((artwork, index) => {
                     return (
-                        <Card key={index} data={artwork} />
+                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
                     )
                 })}
             </div>
             <div className={styles.masonry__masonryRow}>
                 {desktopRowArray3.map((artwork, index) => {
                     return (
-                        <Card key={index} data={artwork} />
+                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
                     )
                 })}
             </div>
             <div className={styles.masonry__masonryRow}>
                 {desktopRowArray4.map((artwork, index) => {
                     return (
-                        <Card key={index} data={artwork} />
+                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
                     )
                 })}
             </div>

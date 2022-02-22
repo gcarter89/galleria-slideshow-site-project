@@ -1,7 +1,7 @@
 import styles from '../Masonry.module.scss';
 import { Card } from '../../Card/Card';
 
-export function MasonryTablet({ data }) {
+export function MasonryTablet({ data, handleArtworkSelect }) {
     let tabletRowArray1 = [];
     let tabletRowArray2 = [];
 
@@ -78,14 +78,14 @@ export function MasonryTablet({ data }) {
             <div className={styles.masonry__masonryRow}>
                 {tabletRowArray1.map((artwork, index) => {
                     return (
-                        <Card key={index} data={artwork} />
+                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
                     )
                 })}
             </div>
             <div className={styles.masonry__masonryRow}>
                 {tabletRowArray2.map((artwork, index) => {
                     return (
-                        <Card key={index} data={artwork} />
+                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
                     )
                 })}
             </div> 

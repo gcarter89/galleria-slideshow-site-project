@@ -1,10 +1,12 @@
 import styles from './Card.module.scss';
 
-export function Card({ data }) {  
+export function Card({ data, handleArtworkSelect }) {  
     const dataImage = require('../../' + data.images.thumbnail);
 
+
+
     return (
-        <div className={styles.card}>
+        <div onClick={(e) => handleArtworkSelect(e, data)} className={styles.card}>
             <img className={styles.card__img} src={dataImage} alt={data.names} />
             <div className={styles.card__copy}>
                 <h1>{data.name}</h1>

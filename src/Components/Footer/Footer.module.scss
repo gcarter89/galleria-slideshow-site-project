@@ -1,10 +1,21 @@
 .footer {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #E5E5E5;
     padding: 24px 40px;
     margin-top: 108px;
+
+    &__progress {
+        position: absolute;
+        width: unset;
+        top: -1px;
+        left: 0;
+        height: 1px;
+        background: black;
+        transition: all 0.25s ease-out;
+    }
 
     &__artworkTitle {
         font-size: 18px;

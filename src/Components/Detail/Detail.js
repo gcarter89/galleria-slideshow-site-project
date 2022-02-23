@@ -9,7 +9,6 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
     const heroImageLarge = require('../../' + selectedArtwork.images.hero.large);
     const artistImage = require('../../' + selectedArtwork.artist.image);
 
-    let timer = useRef([handleArtworkChange, 5000]);
     let timeoutRef = useRef(null);
 
     function resetTimeout() {
@@ -19,13 +18,9 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
     }
 
 
-    
-
-        // console.log(timeoutNow)
-
     useEffect(() => {
         resetTimeout();
-        timeoutRef.current = setTimeout(handleArtworkChange, timer.current[1]); 
+        timeoutRef.current = setTimeout(handleArtworkChange, 7500); 
 
         if (viewImage) {
             resetTimeout();

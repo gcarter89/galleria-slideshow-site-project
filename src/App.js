@@ -14,6 +14,9 @@ function App() {
     const [viewImage, setViewImage] = useState(false);
 
 
+    const progressPercentage = ((artworkIndex + 1) / data.length) * 100;
+
+
     function handleArtworkSelect(event, artwork) {
         event.preventDefault();
         setStart(true);
@@ -49,7 +52,7 @@ function App() {
         <>
             <Header handleHeaderClick={handleHeaderClick} isStart={isStart}/>
             {isStart ? <Detail viewImage={viewImage} setViewImage={setViewImage} handleArtworkChange={handleArtworkChange} selectedArtwork={selectedArtwork} /> : <Masonry data={data} handleArtworkSelect={handleArtworkSelect}/>}
-            {isStart ? <Footer selectedArtwork={selectedArtwork} setSelectedArtwork={setSelectedArtwork} /> : null}
+            {isStart ? <Footer progressPercentage={progressPercentage} selectedArtwork={selectedArtwork} setSelectedArtwork={setSelectedArtwork} /> : null}
         </>
     );
 }

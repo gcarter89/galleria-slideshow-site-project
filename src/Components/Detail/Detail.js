@@ -1,5 +1,6 @@
 import styles from './Detail.module.scss';
 import viewImageIcon from '../../assets/shared/icon-view-image.svg';
+import { Gallery } from './_subcomponents/Gallery.js';
 import { useEffect, useRef } from 'react';
 
 export function Detail({selectedArtwork, handleArtworkChange, viewImage, setViewImage}) {
@@ -9,27 +10,44 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
     const artistImage = require('../../' + selectedArtwork.artist.image);
 
     let timer = useRef([handleArtworkChange, 5000]);
+    let timeoutRef = useRef(null);
 
+    function resetTimeout() {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+    }
+
+
+    
+
+        // console.log(timeoutNow)
 
     useEffect(() => {
+        resetTimeout();
+        timeoutRef.current = setTimeout(handleArtworkChange, timer.current[1]); 
 
         if (viewImage) {
-            console.log('hello this is true')
-            clearTimeout(timer.current[0], timer.current[1])
-        } else {
-            console.log('goodbye this is false');
-            setTimeout(timer.current[0], timer.current[1])
-            
+            resetTimeout();
         }
-    },[viewImage])
+
+        return () => {
+            resetTimeout();
+        }
+
+    },[handleArtworkChange, viewImage])
 
 
-
-
-
-    function handleViewImage(event) {
+    function handleViewImageOpen(event) {
         event.preventDefault();
         setViewImage(true);
+        document.body.style.overflow = 'hidden';
+    }
+
+    function handleViewImageClose(event) {
+        event.preventDefault();
+        setViewImage(false);
+        document.body.style.overflow = 'unset';
     }
 
 
@@ -37,9 +55,9 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
 
     return (
         <main className={styles.detail}>
-        {viewImage ? 1: null}
+        {viewImage ? <Gallery handleViewImageClose={handleViewImageClose} selectedArtwork={selectedArtwork} />: null}
             <div className={styles.detail__hero}>
-                <button onClick={(e) => handleViewImage(e)} className={styles.detail__viewImage}>
+                <button onClick={(e) => handleViewImageOpen(e)} className={styles.detail__viewImage}>
                     <img className={styles.detail__imageIcon} src={viewImageIcon} alt="view img" />
                     VIEW IMAGE
                 </button>

@@ -29,31 +29,11 @@ function App() {
 
     function handleHeaderClick(event) {
         event.preventDefault();
-        setSelectedArtwork(data[0]);
         setArtworkIndex(0);
         setStart(!isStart);
     }
-
-    // function handleForwardButton(event) {
-    //     event.preventDefault();
-    //     if (artworkIndex === data.length - 1 ) {
-    //         return setEndOfSeries(true);
-    //     }
-    //     const nextIndex = artworkIndex + 1;
-    //     setArtworkIndex(nextIndex);
-    //     return setEndOfSeries(false);
-    // }
-
-    // function handleBackButton(event) {
-    //     event.preventDefault();
-    //     if (artworkIndex === 0) {
-    //         return setEndOfSeries(true);
-    //     }
         
-    //     const previousIndex = artworkIndex - 1;
-    //     setArtworkIndex(previousIndex);
-    //     return setEndOfSeries(false);
-    // }
+
 
     const handleArtworkChange = useCallback(() => {
         const updatedIndex = artworkIndex + 1;

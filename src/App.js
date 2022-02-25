@@ -10,9 +10,6 @@ function App() {
     const [isStart, setStart] = useState(false);
     const [selectedArtwork, setSelectedArtwork] = useState(data[0]);
     const [artworkIndex, setArtworkIndex] = useState(0);
-
-
-
     const [viewImage, setViewImage] = useState(false);
 
 

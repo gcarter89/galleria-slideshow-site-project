@@ -1,11 +1,11 @@
 import styles from '../Masonry.module.scss';
-import { Card } from '../../Card/Card';
+import { MasonryRow } from './MasonryRow';
 
 export function MasonryDesktop({ data, handleArtworkSelect }) {
     let desktopRowArray1 = [];
-    let desktopRowArray2 = []
-    let desktopRowArray3 = []
-    let desktopRowArray4 = []
+    let desktopRowArray2 = [];
+    let desktopRowArray3 = [];
+    let desktopRowArray4 = [];
 
     data.forEach((entry, index) => {
         switch(index + 1) {
@@ -77,34 +77,10 @@ export function MasonryDesktop({ data, handleArtworkSelect }) {
 
     return (
         <div className={styles.masonry__masonryDesktop}>
-            <div className={styles.masonry__masonryRow}>
-                {desktopRowArray1.map((artwork, index) => {
-                    return (
-                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
-                    )
-                })}
-            </div>
-            <div className={styles.masonry__masonryRow}>
-                {desktopRowArray2.map((artwork, index) => {
-                    return (
-                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
-                    )
-                })}
-            </div>
-            <div className={styles.masonry__masonryRow}>
-                {desktopRowArray3.map((artwork, index) => {
-                    return (
-                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
-                    )
-                })}
-            </div>
-            <div className={styles.masonry__masonryRow}>
-                {desktopRowArray4.map((artwork, index) => {
-                    return (
-                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
-                    )
-                })}
-            </div>
+            <MasonryRow rowArray={desktopRowArray1} handleArtworkSelect={handleArtworkSelect} />
+            <MasonryRow rowArray={desktopRowArray2} handleArtworkSelect={handleArtworkSelect} />
+            <MasonryRow rowArray={desktopRowArray3} handleArtworkSelect={handleArtworkSelect} />
+            <MasonryRow rowArray={desktopRowArray4} handleArtworkSelect={handleArtworkSelect} />
         </div>
     )
 }

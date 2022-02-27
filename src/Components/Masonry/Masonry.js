@@ -24,7 +24,8 @@ export function Masonry({data, handleArtworkSelect }) {
                 :
                 laptopMatch ?
                     <MasonryLaptop data={data} handleArtworkSelect={handleArtworkSelect} />
-                : <MasonryDesktop data={data} handleArtworkSelect={handleArtworkSelect} />
+                : 
+                    <MasonryDesktop data={data} handleArtworkSelect={handleArtworkSelect} />
             }
         </main>
     )

@@ -1,18 +1,12 @@
 import styles from './Card.module.scss';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-export function Card({ data, handleArtworkSelect, variants }) {  
+export function Card({ data, handleArtworkSelect, variant }) {  
     const dataImage = require('../../' + data.images.thumbnail);
 
 
     return (
-        <AnimatePresence>
-
-            <motion.div 
-                variants={variants}
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y:0 }}
-                exit={{ opacity: 0 , y:+50}} 
+            <motion.div variants={variant}
                 onClick={(e) => handleArtworkSelect(e, data)} className={styles.card}>
                 <img className={styles.card__img} src={dataImage} alt={data.names} />
                 <div className={styles.card__copy}>
@@ -20,8 +14,5 @@ export function Card({ data, handleArtworkSelect, variants }) {
                     <h2>{data.artist.name}</h2>
                 </div>
             </motion.div>
-
-        </AnimatePresence>
-
     )
 }

@@ -16,7 +16,7 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
         }
-    }
+    };
 
 
     useEffect(() => {
@@ -25,26 +25,26 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
 
         if (viewImage) {
             resetTimeout();
-        }
+        };
 
         return () => {
             resetTimeout();
-        }
+        };
 
-    },[handleArtworkChange, viewImage])
+    },[handleArtworkChange, viewImage]);
 
 
     function handleViewImageOpen(event) {
         event.preventDefault();
         setViewImage(true);
         document.body.style.overflow = 'hidden';
-    }
+    };
 
     function handleViewImageClose(event) {
         event.preventDefault();
         setViewImage(false);
         document.body.style.overflow = 'unset';
-    }
+    };
 
 
 
@@ -53,7 +53,7 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
         <motion.main 
             key='detail-main'
             initial={{opacity: 0, y: 200, transition: { ease: 'easeInOut', duration: 0.8}}}
-            animate={{opacity: 1, y: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.6, delay: 0.8}}}
+            animate={{opacity: 1, y: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.8, delay: 1.2}}}
             exit ={{opacity: 0, y: 200, transition: { ease: 'easeInOut', duration: 0.8}}}
             className={styles.detail}>
         {viewImage ? <Gallery handleViewImageClose={handleViewImageClose} selectedArtwork={selectedArtwork} />: null}

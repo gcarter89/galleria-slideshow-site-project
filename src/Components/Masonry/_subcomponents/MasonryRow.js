@@ -28,7 +28,8 @@ export function MasonryRow({rowArray, handleArtworkSelect}) {
             y: 0,
             transition: {
                 ease: [.6, .01, -.05, .95],
-                duration: 1.6
+                duration: 1.2,
+                delay: 1
             }
         },
         exit: {

@@ -7,7 +7,13 @@ export function MasonryRow({rowArray, handleArtworkSelect}) {
     const container = {
         show: {
             transition: {
-                staggerChildren: 0.25
+                staggerChildren: 0.25,
+            }
+        },
+        exit: {
+            transition: {
+                staggerChildren: 0.125,
+                staggerDirection: -1,
             }
         }
     }
@@ -26,10 +32,10 @@ export function MasonryRow({rowArray, handleArtworkSelect}) {
             }
         },
         exit: {
-            opacity: 1,
-            y: -200,
+            opacity: 0,
+            y: 200,
             transition: {
-                ease: 'easeInOut',
+                ease: [.6, .01, -.05, .95],
                 duration: 0.8,
             }
         }
@@ -43,12 +49,15 @@ export function MasonryRow({rowArray, handleArtworkSelect}) {
     })
 
     return (
+
+       
         <motion.div
             className={styles.masonry__masonryRow}
             variants={container}
             initial= "hidden"
             animate= "show"
             exit= "exit"
+            key="masonry-row"
             >
             {cards}
         </motion.div>

@@ -5,6 +5,7 @@ import { Footer } from './Components/Footer/Footer.js';
 import { useState, useEffect, useCallback } from 'react';
 import data from './assets/data.json';
 import './App.scss';
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
     const [isStart, setStart] = useState(false);
@@ -49,11 +50,11 @@ function App() {
 
 
     return (
-        <>
+        <AnimatePresence>
             <Header handleHeaderClick={handleHeaderClick} isStart={isStart}/>
-            {isStart ? <Detail viewImage={viewImage} setViewImage={setViewImage} handleArtworkChange={handleArtworkChange} selectedArtwork={selectedArtwork} /> : <Masonry data={data} handleArtworkSelect={handleArtworkSelect}/>}
+            {isStart ? <Detail key='detail' viewImage={viewImage} setViewImage={setViewImage} handleArtworkChange={handleArtworkChange} selectedArtwork={selectedArtwork} /> : <Masonry data={data} key='masonry' handleArtworkSelect={handleArtworkSelect}/>}
             {isStart ? <Footer dataLength={dataLength} progressPercentage={progressPercentage} selectedArtwork={selectedArtwork} artworkIndex={artworkIndex} setArtworkIndex={setArtworkIndex} /> : null}
-        </>
+        </AnimatePresence>
     );
 }
 

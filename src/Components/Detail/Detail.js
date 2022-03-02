@@ -2,6 +2,7 @@ import styles from './Detail.module.scss';
 import viewImageIcon from '../../assets/shared/icon-view-image.svg';
 import { Gallery } from './_subcomponents/Gallery.js';
 import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 export function Detail({selectedArtwork, handleArtworkChange, viewImage, setViewImage}) {
 
@@ -49,7 +50,12 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
 
 
     return (
-        <main className={styles.detail}>
+        <motion.main 
+            key='detail-main'
+            initial={{opacity: 0, y: 200, transition: { ease: 'easeInOut', duration: 0.8}}}
+            animate={{opacity: 1, y: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.6, delay: 0.8}}}
+            exit ={{opacity: 0, y: 200, transition: { ease: 'easeInOut', duration: 0.8}}}
+            className={styles.detail}>
         {viewImage ? <Gallery handleViewImageClose={handleViewImageClose} selectedArtwork={selectedArtwork} />: null}
             <div className={styles.detail__hero}>
                 <button onClick={(e) => handleViewImageOpen(e)} className={styles.detail__viewImage}>
@@ -75,7 +81,7 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
                 <p className={styles.detail__artworkText}>{selectedArtwork.description}</p>
                 <a className={styles.detail__source} href={selectedArtwork.source} rel='noreferrer' target='_blank'>GO TO SOURCE</a>
             </section>
-        </main>
+        </motion.main>
         
 
     )

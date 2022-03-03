@@ -1,11 +1,12 @@
+import './App.scss';
+import { AnimatePresence } from 'framer-motion'
 import { Header } from './Components/Header/Header.js';
 import { Masonry } from './Components/Masonry/Masonry.js';
 import { Detail } from './Components/Detail/Detail.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { useState, useEffect, useCallback } from 'react';
-import data from './assets/data.json';
-import './App.scss';
-import { AnimatePresence } from 'framer-motion'
+const data = require('./assets/data.json');
+
 
 function App() {
     const [isStart, setStart] = useState(false);

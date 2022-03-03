@@ -5,7 +5,8 @@ import { Masonry } from './Components/Masonry/Masonry.js';
 import { Detail } from './Components/Detail/Detail.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { useState, useEffect, useCallback } from 'react';
-const data = require('./assets/data.json');
+import data from './assets/data.json';
+// const data = require('./assets/data.json');
 
 
 function App() {

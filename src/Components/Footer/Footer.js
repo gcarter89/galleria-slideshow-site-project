@@ -36,13 +36,15 @@ export function Footer({selectedArtwork, progressPercentage, setArtworkIndex, ar
         event.preventDefault()
         const prevIndex = artworkIndex - 1;
         setArtworkIndex(prevIndex);
+        window.scrollTo(0, document.body.scrollHeight);
+
     }
 
     function handleForwardButton(event) {
         event.preventDefault();
         const nextIndex = artworkIndex + 1;
         setArtworkIndex(nextIndex);
-
+        window.scrollTo(0, document.body.scrollHeight);
     }
 
 

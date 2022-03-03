@@ -4,7 +4,7 @@
     width: fit-content;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.841672) 100%);
     cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 
     &__img {

@@ -19,6 +19,11 @@
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 2.14px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__viewImage:hover {
+        background-color: rgba(255,255,255,0.25);
     }
 
     &__imageIcon {
@@ -28,10 +33,16 @@
         padding-bottom: 2px;
     }
 
+    &__copy {
+        display: flex;
+        flex-direction: column;
+        height: 556px;
+    }
 
     &__hero {
         position: relative;
         display: flex;
+        margin-left: 10px;
     }
 
     &__img {
@@ -92,7 +103,8 @@
 
     &__source {
         display: block;
-        padding-top: 80px;
+        width: fit-content;
+        margin-top: auto;
     }
 }
 
@@ -112,6 +124,7 @@
         &__hero {
             display: block;
             width: 475px;
+            margin-left: unset;
         }
 
         &__img {
@@ -150,6 +163,8 @@
         }
 
         &__copy {
+            display: block;
+            height: unset;
             margin-top: 32px;
         }
 
@@ -175,6 +190,7 @@
             width: 475px;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 80px;
             padding-top: 40px;
         }
     }
@@ -211,7 +227,7 @@
         &__hero {
             position: relative;
             width: 327px;
-            margin-bottom: 80px;   
+            margin-bottom: 80px;
         }
 
         &__copy {
@@ -255,7 +271,7 @@
         }
 
         &__source {
-            padding-top: 68px;
+            padding-top: unset;
             width: unset;
             margin-left: unset;
             margin-right: unset;

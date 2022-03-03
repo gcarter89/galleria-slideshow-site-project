@@ -5,12 +5,12 @@ import { Footer } from './Components/Footer/Footer.js';
 import { useState, useEffect, useCallback } from 'react';
 import data from './assets/data.json';
 import './App.scss';
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
     const [isStart, setStart] = useState(false);
     const [selectedArtwork, setSelectedArtwork] = useState(data[0]);
     const [artworkIndex, setArtworkIndex] = useState(0);
-    const [viewImage, setViewImage] = useState(false);
 
 
     const progressPercentage = ((artworkIndex + 1) / data.length) * 100;
@@ -49,11 +49,11 @@ function App() {
 
 
     return (
-        <>
+        <AnimatePresence>
             <Header handleHeaderClick={handleHeaderClick} isStart={isStart}/>
-            {isStart ? <Detail viewImage={viewImage} setViewImage={setViewImage} handleArtworkChange={handleArtworkChange} selectedArtwork={selectedArtwork} /> : <Masonry data={data} handleArtworkSelect={handleArtworkSelect}/>}
-            {isStart ? <Footer dataLength={dataLength} progressPercentage={progressPercentage} selectedArtwork={selectedArtwork} artworkIndex={artworkIndex} setArtworkIndex={setArtworkIndex} /> : null}
-        </>
+            {isStart ? <Detail key='detail' handleArtworkChange={handleArtworkChange} selectedArtwork={selectedArtwork} /> : <Masonry data={data} key='masonry' handleArtworkSelect={handleArtworkSelect}/>}
+            {isStart ? <Footer key='footer' dataLength={dataLength} progressPercentage={progressPercentage} selectedArtwork={selectedArtwork} artworkIndex={artworkIndex} setArtworkIndex={setArtworkIndex} /> : null}
+        </AnimatePresence>
     );
 }
 

@@ -1,7 +1,7 @@
 import styles from './Gallery.module.scss';
-export function Gallery({selectedArtwork, handleViewImageClose}) {
 
-    console.log(selectedArtwork);
+
+export function Gallery({selectedArtwork, handleViewImageClose}) {
     const galleryImage = require('../../../' + selectedArtwork.images.gallery);
 
 
@@ -12,5 +12,6 @@ export function Gallery({selectedArtwork, handleViewImageClose}) {
                 <img className={styles.gallery__image} src={galleryImage} alt='gallery pic' />
             </div>
         </div>
+
     )
 }

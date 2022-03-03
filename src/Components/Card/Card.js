@@ -1,17 +1,18 @@
 import styles from './Card.module.scss';
+import { motion } from "framer-motion";
 
-export function Card({ data, handleArtworkSelect }) {  
+export function Card({ data, handleArtworkSelect, variant }) {  
     const dataImage = require('../../' + data.images.thumbnail);
 
 
-
     return (
-        <div onClick={(e) => handleArtworkSelect(e, data)} className={styles.card}>
-            <img className={styles.card__img} src={dataImage} alt={data.names} />
-            <div className={styles.card__copy}>
-                <h1>{data.name}</h1>
-                <h2>{data.artist.name}</h2>
-            </div>
-        </div>
+            <motion.div variants={variant}
+                onClick={(e) => handleArtworkSelect(e, data)} className={styles.card}>
+                <img className={styles.card__img} src={dataImage} alt={data.names} />
+                <div className={styles.card__copy}>
+                    <h1>{data.name}</h1>
+                    <h2>{data.artist.name}</h2>
+                </div>
+            </motion.div>
     )
 }

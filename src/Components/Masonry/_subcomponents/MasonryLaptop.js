@@ -1,5 +1,5 @@
-import { Card } from '../../Card/Card';
 import styles from '../Masonry.module.scss';
+import { MasonryRow } from './MasonryRow';
 
 
 export function MasonryLaptop({ data, handleArtworkSelect }) {
@@ -79,29 +79,9 @@ export function MasonryLaptop({ data, handleArtworkSelect }) {
     
     return (
         <div className={styles.masonry__masonryLaptop}>
-            <div className={styles.masonry__masonryRow}>
-                {laptopRowArray1.map((artwork, index) => {
-                    return (
-                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
-                    )
-                })}
-            </div>
-            <div className={styles.masonry__masonryRow}>
-                {laptopRowArray2.map((artwork, index) => {
-                    return (
-                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
-                    )
-                })}
-                
-            </div>
-            <div className={styles.masonry__masonryRow}>
-                {laptopRowArray3.map((artwork, index) => {
-                    return (
-                        <Card key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
-                    )
-                })}
-                
-            </div>
+            <MasonryRow rowArray={laptopRowArray1} handleArtworkSelect={handleArtworkSelect} />
+            <MasonryRow rowArray={laptopRowArray2} handleArtworkSelect={handleArtworkSelect} />
+            <MasonryRow rowArray={laptopRowArray3} handleArtworkSelect={handleArtworkSelect} />
         </div>
         
     )

@@ -5,14 +5,19 @@ import { motion } from 'framer-motion'
 export function MasonryRow({rowArray, handleArtworkSelect}) {
 
     const container = {
-        show: {
+        hidden: {
             transition: {
-                staggerChildren: 0.25,
+                staggerChildren: 0.5,
             }
         },
+        // show: {
+        //     transition: {
+        //         staggerChildren: 0.25,
+        //     }
+        // },
         exit: {
             transition: {
-                staggerChildren: 0.125,
+                staggerChildren: 0.2,
                 staggerDirection: -1,
             }
         }
@@ -34,10 +39,10 @@ export function MasonryRow({rowArray, handleArtworkSelect}) {
         },
         exit: {
             opacity: 0,
-            y: 200,
+            y: 650,
             transition: {
                 ease: [.6, .01, -.05, .95],
-                duration: 0.8,
+                duration: 1.6,
             }
         }
 

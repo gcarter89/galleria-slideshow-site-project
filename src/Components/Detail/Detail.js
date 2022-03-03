@@ -1,16 +1,20 @@
 import styles from './Detail.module.scss';
 import viewImageIcon from '../../assets/shared/icon-view-image.svg';
 import { Gallery } from './_subcomponents/Gallery.js';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
-export function Detail({selectedArtwork, handleArtworkChange, viewImage, setViewImage}) {
+export function Detail({selectedArtwork, handleArtworkChange}) {
 
     const heroImageSmall = require('../../' + selectedArtwork.images.hero.small);
     const heroImageLarge = require('../../' + selectedArtwork.images.hero.large);
     const artistImage = require('../../' + selectedArtwork.artist.image);
 
     let timeoutRef = useRef(null);
+    const [viewImage, setViewImage] = useState(false);
+
+
+    const [isSlideshow, setIsSlideshow] = useState(false);
 
     function resetTimeout() {
         if (timeoutRef.current) {
@@ -21,14 +25,14 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
 
     useEffect(() => {
         resetTimeout();
-        timeoutRef.current = setTimeout(handleArtworkChange, 7500); 
-
+        timeoutRef.current = setTimeout(handleArtworkChange, 7500);
         if (viewImage) {
             resetTimeout();
         };
 
         return () => {
             resetTimeout();
+            setIsSlideshow(true);
         };
 
     },[handleArtworkChange, viewImage]);
@@ -40,6 +44,7 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
         document.body.style.overflow = 'hidden';
     };
 
+
     function handleViewImageClose(event) {
         event.preventDefault();
         setViewImage(false);
@@ -47,18 +52,16 @@ export function Detail({selectedArtwork, handleArtworkChange, viewImage, setView
     };
 
 
-
-
     return (
-        <motion.main 
-            key='detail-main'
-            initial={{opacity: 0, y: 200, transition: { ease: 'easeInOut', duration: 0.8}}}
-            animate={{opacity: 1, y: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.8, delay: 1.2}}}
+        <motion.main
+            key={selectedArtwork.name}
+            initial={isSlideshow ? {opacity:0, x: 200} : {opacity: 0, y: 200}}
+            animate= {isSlideshow ? {opacity: 1, x: 0, y: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.8}} : {opacity: 1, y: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.8, delay: 1.8}}}
             exit ={{opacity: 0, y: 200, transition: { ease: 'easeInOut', duration: 0.8}}}
             className={styles.detail}>
-        {viewImage ? <Gallery handleViewImageClose={handleViewImageClose} selectedArtwork={selectedArtwork} />: null}
+        {viewImage ? <Gallery handleViewImageClose={(e) => handleViewImageClose(e)} selectedArtwork={selectedArtwork} />: null}
             <div className={styles.detail__hero}>
-                <button onClick={(e) => handleViewImageOpen(e)} className={styles.detail__viewImage}>
+                <button onClick={handleViewImageOpen} className={styles.detail__viewImage}>
                     <img className={styles.detail__imageIcon} src={viewImageIcon} alt="view img" />
                     VIEW IMAGE
                 </button>

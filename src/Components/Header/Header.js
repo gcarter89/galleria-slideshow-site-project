@@ -19,14 +19,14 @@ export function Header({handleHeaderClick, isStart}) {
                 className={styles.header__logo}
                 src={Logo} 
                 alt='Galleria logo'
-                // initial={{opacity: 0, x: -200}}
-                // animate={{opacity: 1, x: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.6}}}
+                initial={{opacity: 0, x: -200}}
+                animate={{opacity: 1, x: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.6}}}
             />
             <motion.button 
                 className={styles.header__button} 
                 onClick={(e) => handleHeaderClick(e)}
-                // initial={{opacity: 0, x: 200}}
-                // animate={{opacity: 1, x: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.6}}}
+                initial={{opacity: 0, x: 200}}
+                animate={{opacity: 1, x: 0, transition: { ease: [.6, .01, -.05, .95], duration: 1.6}}}
             >{isStart ? 'Stop Slideshow' : 'Start Slideshow'}</motion.button>
         </header>
     )

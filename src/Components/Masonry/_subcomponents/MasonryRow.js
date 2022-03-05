@@ -10,11 +10,6 @@ export function MasonryRow({rowArray, handleArtworkSelect}) {
                 staggerChildren: 0.5,
             }
         },
-        // show: {
-        //     transition: {
-        //         staggerChildren: 0.25,
-        //     }
-        // },
         exit: {
             transition: {
                 staggerChildren: 0.2,
@@ -34,7 +29,6 @@ export function MasonryRow({rowArray, handleArtworkSelect}) {
             transition: {
                 ease: [.6, .01, -.05, .95],
                 duration: 1.2,
-                delay: 1
             }
         },
         exit: {
@@ -50,22 +44,24 @@ export function MasonryRow({rowArray, handleArtworkSelect}) {
 
     const cards = rowArray.map((artwork, index) => {
         return (
-            <Card variant={cardItem} key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
+            <Card
+                // variant={cardItem} 
+                key={index} data={artwork} handleArtworkSelect={handleArtworkSelect} />
         )
     })
 
     return (
 
        
-        <motion.div
+        <div
             className={styles.masonry__masonryRow}
-            variants={container}
-            initial= "hidden"
-            animate= "show"
-            exit= "exit"
-            key="masonry-row"
+            // variants={container}
+            // initial= "hidden"
+            // animate= "show"
+            // exit= "exit"
+            // key="masonry-row"
             >
             {cards}
-        </motion.div>
+        </div>
     )
 }

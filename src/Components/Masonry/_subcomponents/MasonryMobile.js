@@ -1,15 +1,11 @@
 import styles from '../Masonry.module.scss';
-import { Card } from '../../Card/Card';
+import { MasonryRow } from './MasonryRow'
 
 export function MasonryMobile({ data, handleArtworkSelect }) {
 
     return (
         <div className={styles.masonry__masonryMobile}>
-            {data.map((artwork, index) => {
-                return (
-                    <Card handleArtworkSelect={handleArtworkSelect} key={index} data={artwork} />
-                )
-        })}
+            <MasonryRow rowArray={data} handleArtworkSelect={handleArtworkSelect} />
         </div>
     )
 }
